@@ -27,7 +27,9 @@ func main() {
 		return
 	}
 
-	f, err := os.OpenFile("result.txt", os.O_CREATE|os.O_WRONLY, os.ModePerm)
+	resultFileName := fmt.Sprintf("%s-commands.txt", config.MigrationType)
+
+	f, err := os.OpenFile(resultFileName, os.O_CREATE|os.O_WRONLY, os.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 		return
